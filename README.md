@@ -24,6 +24,7 @@ Please take a look at the UI prototype spec first: http://www.topcoder.com/chall
 1. Postgres DB Persistence - all data should be stored to Postgres, this includes admin accounts data, point records data, hashtag (or challenge) configuration data as well as rank (badge) configuration data. 
 
 Note that in the point data record, the point value should be stored together with it. So it doesn't matter if the user changes the point-value associated with the hashtag (or challenge). 
+'''
 adminUser table:
          adminUserId: Primary Key
 adminUsername: String, unique, case-insensitive
@@ -79,14 +80,15 @@ pointValue: Number
 proof: String
 createdOn: Timestamp
 updatedOn: Timestamp  - this field is returned as timestamp in response
+'''
 
 2. The following APIs should be defined (and please remove all existing APIs). 
 For all APIs, the input should be validated, and the 400 (for bad request), 401 (unauthorized), 403 (forbidden), 404 (not found), 500 (Internal Error) should be properly used.
  
 Login page:
-POST /login - the request payload should contain username and password, the response should contain a jwt token and user role (super-admin or non-super-admin). 
+<code> POST /login </code> - the request payload should contain username and password, the response should contain a jwt token and user role (super-admin or non-super-admin). 
 Common Dropdown data - these APIs are only used on point-management page
-GET /teams?active=xx (authentication needed) - it should return teams from msTeam table. The active parameter can be true or false to return active or inactive teams. If not provided return all teams. The response should contain the team id and team name. (No need to return the msTeamId field)
+<code> GET /teams?active=xx </code> (authentication needed) - it should return teams from msTeam table. The active parameter can be true or false to return active or inactive teams. If not provided return all teams. The response should contain the team id and team name. (No need to return the msTeamId field)
 GET /teams/{teamId}/users?active=xx (authentication needed) - it should return users in given team from msTeamUser table. The active parameter can be true or false to return active or inactive team users. If not provided return all team users. The response should contain the user id and user name. (No need to return msTeamUserId field)
 Page Header for non-super admin user:
 GET /user/teams (for non-super admin only) - it should return all the teams associated with non-super admin user. The response should contain the team id and team name. 
