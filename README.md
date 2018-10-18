@@ -1,12 +1,12 @@
 # Culture-Works-Spark-Bot---API-and-Misc-Updates
 
-Challenge Overview
-Challenge Objectives
+
+## Project Objectives
 Update the spark bot to add REST APIs for the admin user interface
 Update the spark bot accordingly to work with the added REST APIs
 The prototype is also provided to you, and you need to ensure the REST APIs cover all the functionalities in the prototype
  
-Project Background
+## Project Background
 We previously launched two challenges to build the spark bot:
 http://www.topcoder.com/challenge-details/30066653/?type=develop&noncache=true
 http://www.topcoder.com/challenge-details/30066882/?type=develop&noncache=true
@@ -18,10 +18,7 @@ Node 10+
 MS Team Bot
 Postgres
  
-Code access
-None
- 
-Individual requirements
+## Individual requirements
 Please take a look at the UI prototype spec first: http://www.topcoder.com/challenge-details/30072468/?type=develop&noncache=true
 
 1. Postgres DB Persistence - all data should be stored to Postgres, this includes admin accounts data, point records data, hashtag (or challenge) configuration data as well as rank (badge) configuration data. 
